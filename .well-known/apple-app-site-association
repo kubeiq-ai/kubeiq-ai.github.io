@@ -1,0 +1,9 @@
+{
+  "webcredentials": {
+    "apps": [
+      "7W43VPB8DS.ai.kubeiq.k3travel.ios.debug",
+      "7W43VPB8DS.ai.kubeiq.k3travel.ios.uat",
+      "7W43VPB8DS.ai.kubeiq.k3travel.ios"
+    ]
+  }
+}
