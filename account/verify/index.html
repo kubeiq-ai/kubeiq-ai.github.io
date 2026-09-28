@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Continue in K3Travel</title>
+  <style>
+    :root { color-scheme: light dark; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #050b1d; color: #f7f9ff; }
+    main { width: min(34rem, calc(100% - 3rem)); padding: 2.5rem; border: 1px solid #244a88; border-radius: 1.25rem; background: #0b1733; }
+    h1 { margin-top: 0; color: #8fd3ff; }
+    p { line-height: 1.6; }
+    a { display: inline-block; margin-top: .75rem; padding: .85rem 1.25rem; border-radius: .75rem; background: #2f80ed; color: white; font-weight: 700; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Continue in K3Travel</h1>
+    <p>If K3Travel did not open automatically, tap below to finish verifying your email and sign in.</p>
+    <p><a id="continue" href="k3travel://account/verify">Verify and continue in K3Travel</a></p>
+  </main>
+  <script>
+    const query = new URLSearchParams(window.location.search);
+    const appURL = new URL("k3travel://account/verify");
+    const token = query.get("token");
+    if (token) appURL.searchParams.set("token", token);
+    document.getElementById("continue").href = appURL.toString();
+  </script>
+</body>
+</html>
